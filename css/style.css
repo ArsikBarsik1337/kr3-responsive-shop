@@ -19,7 +19,7 @@
   --color-surface: #f7f7f7;
   --color-surface-accent: #eef5ff;
   --color-danger: #b00020;
-  --color-success: #168a2f;
+  --color-success: #137a29;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
 
@@ -75,7 +75,9 @@ footer {
 */
 header {
   background-color: var(--color-surface);
-  background-image: url('../images/bg.webp');
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+  url('../images/bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -774,4 +776,38 @@ html {
 
 @media (max-width: 600px) {
   .map-wrapper { height: 300px; }
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 1000;
+  padding: 8px 12px;
+  color: #ffffff;
+  background-color: #111111;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 16px;
+}
+:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
+}
+
+.site-nav__link:focus-visible,
+.button:focus-visible,
+.order-form__input:focus-visible,
+.order-form__textarea:focus-visible,
+.order-form__select:focus-visible {
+  outline: 3px solid var(--color-primary, #0057b8);
+  outline-offset: 3px;
+}
+
+.site-header a:focus-visible {
+  outline-color: #ffffff;
 }

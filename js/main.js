@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
      1. Модальное окно заявки на главной странице
      ------------------------------------------------------- */
   const orderDialog = document.getElementById('order-dialog');
-  const orderButtons = document.querySelectorAll('.product-card__button[data-product]');
+  const orderButtons = document.querySelectorAll('button[data-product]');
   const closeDialogButton = document.getElementById('close-order-dialog');
   const selectedProductInput = document.getElementById('selected-product');
   const orderForm = document.getElementById('order-form');
@@ -51,6 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!form) return;
 
     form.addEventListener('submit', (event) => {
+       form.addEventListener('input', (event) => {
+      const field = event.target;
+      if (field.willValidate && field.checkValidity()) {
+        field.removeAttribute('aria-invalid');
+      }
+    });
       event.preventDefault();
 
       // Сбрасываем предыдущие метки об ошибках
