@@ -10,6 +10,7 @@
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
 <header class="site-header">
   <div class="site-header__inner">
     <a class="site-header__logo" href="index.html">Магазин Жучков</a>
@@ -41,8 +42,8 @@
   </div>
 </header>
 
-<main>
-  <nav class="breadcrumbs" aria-label="Хлебные крошки">
+<main id="main" class="main">
+    <nav class="breadcrumbs" aria-label="Хлебные крошки">
     <a class="breadcrumbs__link" href="index.html">Главная</a>
     <span class="breadcrumbs__current">Оформление заказа</span>
   </nav>
@@ -50,7 +51,7 @@
   <section class="section">
     <h1>Оформление заказа</h1>
     <p>Пожалуйста, заполните форму ниже, чтобы мы могли связаться с вами.</p>
-
+    <p class="form-note">Все поля формы обязательны для заполнения.</p>
     <form class="order-form order-form--page" id="order-page-form" action="#" method="post" novalidate>
       <div class="order-form__field">
         <label class="order-form__label" for="order-page-name">Имя</label>
