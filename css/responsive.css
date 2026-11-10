@@ -123,25 +123,29 @@ video {
 
 .hero__content {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-md, 16px);
+  min-width: 0;
 }
 
 .hero__title {
-  font-size: clamp(28px, 6vw, 44px);
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
   line-height: 1.15;
   overflow-wrap: break-word;
 }
 .hero__content .button { justify-self: start; }
 
 .hero__image {
+  display: block;
   width: 100%;
-  max-width: 520px;
-  margin-inline: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: var(--radius-lg, 12px);
 }
 
 @media (min-width: 900px) {
   .hero {
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }
 }
 
@@ -350,6 +354,25 @@ video {
 
 @media (min-width: 768px) {
   .product-details__layout {
-    grid-template-columns: minmax(240px, 1fr) minmax(0, 1.4fr);
+    grid-template-columns: minmax(15rem, 1fr) minmax(0, 1.4fr);
   }
+}
+
+html {font-size: clamp(100%, 0.875rem + 0.4vw, 112.5%);}
+h1 {font-size: clamp(1.75rem, 1.25rem + 2.5vw, 2.75rem);}
+h2 {font-size: clamp(1.375rem, 1.1rem + 1.4vw, 2rem);}
+h3 {font-size: clamp(1.125rem, 1rem + 0.7vw, 1.5rem);}
+
+.breadcrumbs {font-size: 0.875rem;}
+.product-card__badge {font-size: 0.75rem;}
+.product-card__price {font-size: 1.125rem;}
+.product-details__price {font-size: clamp(1.25rem, 1rem + 1.2vw, 1.5rem);}
+.faq-item__question::after {font-size: 1.25rem;}
+small {font-size: 0.875rem;}
+
+.product-details__image {
+  width: 100%;
+  max-width: 26.25rem;
+  aspect-ratio: 5/4;
+  object-fit: cover;
 }
